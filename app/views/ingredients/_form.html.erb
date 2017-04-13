@@ -1,0 +1,14 @@
+<section class='form'>
+  <%= form_for ingredient do |f| %>
+
+    <section class='field'>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </section>
+
+    <section class='submit'>
+      <%= f.submit %>
+    </section>
+
+  <% end %>
+</section>
