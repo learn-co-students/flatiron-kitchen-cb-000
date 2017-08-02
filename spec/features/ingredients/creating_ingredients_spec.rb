@@ -22,5 +22,14 @@ describe "creating ingredients" do
       expect(Ingredient.first.name).to eq("Parsley")
       expect(page).to have_content("Parsley")
     end
+
+    it "should create an ingredient with a quantity" do
+      fill_in 'ingredient_name', with: 'Parsley'
+      fill_in 'ingredient_quantity', with: 1.5
+      click_button('Create Ingredient')
+
+      expect(Ingredient.first.quantity).to eq(1.5)
+      expect(page).to have_content("Parsley")
+    end
   end
 end
