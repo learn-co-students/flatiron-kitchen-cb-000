@@ -32,8 +32,8 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-group :development do
-  gem "pry", '~> 0.10.3'
+group :development, :test do
+  gem 'pry-rails'
 end
 
 group :test do

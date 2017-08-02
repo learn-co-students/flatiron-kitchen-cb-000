@@ -1,0 +1,5 @@
+<h2>Recipe</h2>
+<p><%= @recipe.name %></p>
+<p>Based of the avaliable ingredients <%= @recipe.dishes_avaliable %>
+  <%= @recipe.name.pluralize(@recipe.dishes_avaliable) %> can be made.
+</p>
