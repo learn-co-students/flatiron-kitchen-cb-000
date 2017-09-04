@@ -1,0 +1,7 @@
+<!-- show all recipes -->
+
+<h1>Recipes</h1>
+
+<% @recipes.each do |recipe| %>
+    <%= render partial: 'form', locals: {recipe: @recipe} %>
+<% end %>
