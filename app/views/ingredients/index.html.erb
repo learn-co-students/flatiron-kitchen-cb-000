@@ -1,0 +1,8 @@
+<h3>Ingredients List: </h3>
+<% if !@ingredients.empty? %>
+  <ul>
+  <% @ingredients.each do |ingredient|%>
+    <li><%= link_to ingredient.name, ingredient_path(ingredient.id)  %></li>
+  <% end %>
+  </ul>
+<% end %>
