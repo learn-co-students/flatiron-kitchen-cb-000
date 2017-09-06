@@ -1,0 +1,12 @@
+<h3><%= @recipe.name %></h3>
+<h3>Ingredients:</h3>
+<% if !@recipe.ingredients.empty? %>
+  <ul>
+    <% @recipe.ingredients.each do |ingredient| %>
+      <li><%= ingredient.name %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<h3>Available dishes:</h3>
+<%= @recipe.ingredients_to_dishes %>
