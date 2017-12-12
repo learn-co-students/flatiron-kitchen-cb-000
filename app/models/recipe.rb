@@ -4,7 +4,11 @@ class Recipe < ActiveRecord::Base
     validates :name, presence: true
 
     def ingredients_to_dishes
-        self.no_of_ingredients / 2
+        if no_of_ingredients != 1
+            self.no_of_ingredients / 2
+        else
+            1
+        end
     end
 
     def no_of_ingredients
