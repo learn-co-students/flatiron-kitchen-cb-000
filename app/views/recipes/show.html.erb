@@ -5,3 +5,5 @@
     <li><%= ingredient.name %></li>
 <% end %>
 <ul>
+
+<p>This recipe can make <%= pluralize(@recipe.ingredients_to_dishes, "serving") %>.</p>
