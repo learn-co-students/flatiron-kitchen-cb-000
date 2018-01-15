@@ -1,0 +1,9 @@
+<h1><%= @recipe.name %></h1>
+<h3>Ingdredients</h3>
+<ul>
+<% @ingredients.each do |ingredient| %>
+    <li><%= ingredient.name %></li>
+<% end %>
+<ul>
+
+<p>This recipe can make <%= pluralize(@recipe.ingredients_to_dishes, "serving") %>.</p>
