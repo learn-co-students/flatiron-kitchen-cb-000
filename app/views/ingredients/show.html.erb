@@ -1,0 +1,5 @@
+<%= render partial: 'ingredient', locals: {ingredient: @ingredient} %>
+Recipes
+<% @ingredient.recipes.each do |recipe| %>
+  <%= render partial: 'recipes/recipe', locals: {recipe: recipe} %>
+<% end %>

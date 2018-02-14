@@ -9,6 +9,11 @@
 <body>
 
 <%= yield %>
-
+<br><br>
+<%= link_to "Ingredients", ingredients_path %>
+<%= link_to "Recipes", recipes_path %>
+<br><br>
+<%= link_to "Add New Recipe", new_recipe_path %>
+<%= link_to "Add New Ingredient", new_ingredient_path %>
 </body>
 </html>
