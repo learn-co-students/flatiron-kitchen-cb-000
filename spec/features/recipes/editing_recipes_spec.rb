@@ -3,7 +3,7 @@ require 'spec_helper'
 describe "editing recipes" do
   context "on the edit recipe page" do
     before do
-      @recipe = Recipe.create(name: "Rice Pudding")
+      @recipe = Recipe.create(recipe_name: "Rice Pudding")
       visit edit_recipe_path(@recipe)
     end
 
@@ -14,20 +14,20 @@ describe "editing recipes" do
 
     # Does the form correctly update the recipe name?
     it "should update a recipe when the form is submitted" do
-      fill_in 'recipe_name', with: "Rice Pudding with Farmer Darryl's Frog Sauce"
+      fill_in 'recipe_recipe_name', with: "Rice Pudding with Farmer Darryl's Frog Sauce"
       click_button('Update Recipe')
 
-      expect(Recipe.first.name).to eq("Rice Pudding with Farmer Darryl's Frog Sauce")
+      expect(Recipe.first.recipe_name).to eq("Rice Pudding with Farmer Darryl's Frog Sauce")
       expect(page).to have_content("Rice Pudding with Farmer Darryl's Frog Sauce")
     end
 
     # Are there all ingredients listed in the form with
     # the ingredient name as a label and an associated checkbox?
     it "should display all the existing ingredients" do
-      Ingredient.create(name: 'Paprika')
-      Ingredient.create(name: 'Clove')
-      Ingredient.create(name: 'Ginger')
-      Ingredient.create(name: 'Cider')
+      Ingredient.create(ingredient_name: 'Paprika')
+      Ingredient.create(ingredient_name: 'Clove')
+      Ingredient.create(ingredient_name: 'Ginger')
+      Ingredient.create(ingredient_name: 'Cider')
 
       visit edit_recipe_path(@recipe)
 
@@ -44,10 +44,10 @@ describe "editing recipes" do
     #       implemented HTML label
     #       (i.e. clicking on the <label> checks/unchecks the box).
     it "should be able to add ingredients" do
-      Ingredient.create(name: 'Paprika')
-      Ingredient.create(name: 'Clove')
-      Ingredient.create(name: 'Ginger')
-      Ingredient.create(name: 'Cider')
+      Ingredient.create(ingredient_name: 'Paprika')
+      Ingredient.create(ingredient_name: 'Clove')
+      Ingredient.create(ingredient_name: 'Ginger')
+      Ingredient.create(ingredient_name: 'Cider')
 
       visit edit_recipe_path(@recipe)
 
@@ -67,10 +67,10 @@ describe "editing recipes" do
     #       implemented HTML label
     #       (i.e. clicking on the <label> checks/unchecks the box).
     it "should be able to remove ingredients" do
-      @recipe.ingredients.create(name: 'Paprika')
-      @recipe.ingredients.create(name: 'Clove')
-      @recipe.ingredients.create(name: 'Ginger')
-      @recipe.ingredients.create(name: 'Cider')
+      @recipe.ingredients.create(ingredient_name: 'Paprika')
+      @recipe.ingredients.create(ingredient_name: 'Clove')
+      @recipe.ingredients.create(ingredient_name: 'Ginger')
+      @recipe.ingredients.create(ingredient_name: 'Cider')
 
       expect(@recipe.ingredients.count).to eq(4)
 
