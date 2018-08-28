@@ -12,6 +12,11 @@ Things used to be simpler when there were only a few chefs at Flatiron Kitchen, 
 
 We need to be able to track which ingredients the restaurant has available and which ingredients are used in each recipe.
 
+rails g resource Recipe name:string --no-test-framework
+rails g resource Ingredient name:string --no-test-framework
+rails g model RecipeIngredients recipe_id:integer ingredient_id:integer --no-test-framework
+
+
 Your application should use a join table called "recipe_ingredients" to keep track of the ingredients for each recipe.
 
 Build your site so that it passes the tests in spec/features. There aren't tests for index pages or things like page headers or links, but feel free to add these (otherwise your app will be difficult to navigate).
