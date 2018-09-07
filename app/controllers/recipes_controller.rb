@@ -6,7 +6,6 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = Recipe.create(recipe_params)
-    # binding.pry
     redirect_to @recipe
   end
 
@@ -16,6 +15,7 @@ class RecipesController < ApplicationController
 
   def update
     @recipe = Recipe.find(params[:id])
+    # binding.pry
     @recipe.update(recipe_params)
     redirect_to @recipe
   end
