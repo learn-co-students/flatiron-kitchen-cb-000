@@ -1,0 +1,15 @@
+<h1>Recipe: <%= @recipe.name %></h1>
+<h2>Ingredients:</h2>
+
+<% @recipe.ingredients.each do |i| %>
+  <%= i.name %><br>
+<% end %>
+<br></br>
+
+<% if Recipe.matching_recipes(@recipe).count > 0 %>
+  <h3>You can make <%=Recipe.matching_recipes(@recipe).count%> other recipes with these ingredients:</h3>
+
+  <% Recipe.matching_recipes(@recipe).each do |r| %>
+    <p><%= r.name %></p>
+  <% end %>
+<% end %>

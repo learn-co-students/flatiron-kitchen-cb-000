@@ -1,0 +1,9 @@
+<h1>Ingredients#index</h1>
+<p>Find me in app/views/ingredients/index.html.erb</p>
+
+<h2>Add an Ingredient:</h2>
+<%= render partial: 'form', locals: {ingredient: @ingredient} %>
+
+<% @ingredients.each do |ingredient| %>
+  <p><%= link_to ingredient.name, ingredient_path(ingredient.id) %></p>
+<% end %>
