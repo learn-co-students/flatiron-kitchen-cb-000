@@ -1,0 +1,16 @@
+<%= form_for recipe do |r| %>
+  <p>
+    <%= r.label :name %>
+    <%= r.text_field :name %>
+  </p>
+
+  <p>Ingredients:</p>
+  <p>
+    <% ingredients.each do |ingredient| %>
+      <label for="ingredients_<%= ingredient.id %>"><%= ingredient.name %></label>
+      <input type="checkbox" name="ingredients[ids][]" id="ingredients_<%= ingredient.id %>" value="<%= ingredient.id %>" <%= "checked" if recipe.ingredients.include? ingredient %>><br>
+    <% end %>
+  </p>
+
+  <%= r.submit %>
+<% end %>
