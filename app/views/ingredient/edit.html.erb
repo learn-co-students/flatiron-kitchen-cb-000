@@ -1,0 +1,5 @@
+<h1>Ingredient Edit:</h1>
+<%= form_for @ingredient, url:{controller: 'ingredient', action:'update'}, html:{method:'put'} do |f| %>
+  <%= f.text_field :name %>
+  <%= f.submit "Update Ingredient" %>
+<% end %>

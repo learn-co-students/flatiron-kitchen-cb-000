@@ -1,4 +1,22 @@
 FlatironKitchen::Application.routes.draw do
+  #get 'recipe/create'
+
+  #get 'recipe/edit'
+
+  #get 'recipe/show'
+
+  #get 'recipe/new'
+
+  #get 'recipe/update'
+
+  #get 'ingredients/new'
+
+  #get 'ingredients/create'
+
+  #get 'ingredients/edit'
+
+  resources :ingredient
+  resources :recipe
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -39,7 +57,7 @@ FlatironKitchen::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'
