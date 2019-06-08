@@ -1,0 +1,7 @@
+<%= fields_for @recipe do |f| %>
+  <%= f.label :recipe_name %>
+  <%= f.text_field :recipe_name %>
+  <%= f.label :ingredients %>
+  <%= f.collection_check_boxes :ingredient_ids, Ingredient.all, :id, :ingredient_name %>
+
+<% end %>
