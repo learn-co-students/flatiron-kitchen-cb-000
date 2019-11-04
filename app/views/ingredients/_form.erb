@@ -1,0 +1,16 @@
+<%= form_for @ingredient do |f| %>
+  <% if @ingredient.errors.any? %>
+    <h2><%= pluralize(@ingredient.errors.count, "error") %> prevented this ingredient from being saved:</h2>
+
+    <ul>
+    <% @ingredient.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  <% end %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %><br>
+
+  <%= f.submit %>
+<% end %>

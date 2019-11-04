@@ -19,7 +19,7 @@ describe "creating ingredients" do
       fill_in 'ingredient_name', with: 'Parsley'
       click_button('Create Ingredient')
 
-      expect(Ingredient.first.name).to eq("Parsley")
+      expect(Ingredient.last.name).to eq("Parsley")
       expect(page).to have_content("Parsley")
     end
   end
